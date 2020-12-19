@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>爱淘宝</title>
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="out">
+		<div class="header">
+			<div class="pic1"><img src="images/1.png"></div>
+			<ul class="header__info ">
+				<li><a href="#">登陆/注册</a></li>
+				<li class="iphone"><a href="#">移动客户端</a></li>
+				<li class="weixin"><a href="#">微信</a></li>
+	        </ul>
+			<ul id="nav1">
+				<li><a href="#">每日爆品&nbsp;1元起</a></li>
+				<li><a href="#">天猫618狂欢会场</a></li>
+				<li><a href="#">天猫国际名品城</a></li>
+				<li><a href="#">天猫进口产品超市</a></li>
+			</ul>
+			<div class="search">
+				<form>
+					<input type="text" placeholder="狂欢开幕“请输入关键词”">
+			    	<button type="submit"></button>
+			    </form>
+		    </div>
+	    	<a href="#" id="individual">个人中心</a>
+		</div>
+		<div id="banner">
+			<div id="container1">
+				<ul>
+					<li id="pic" ><img src="images/1.jpg"></li>
+				</ul>
+			</div>
+			<div id="login">
+				<div id="username">
+					<div>用户名</div>
+					<form>
+						<input class="disappear" id="userid" type="text" name="username" onclick="user1()" onblur="user2()">
+					</form>
+				</div>
+				<div id="hint1" class="hint" style="display: none;">支持中文数字</div>
+				<div id="hint2" class="hint" style="display: none;">用户名不能为空</div>
+				<div id="password">
+				<div>设置密码</div>
+				<form>
+					<input class="disappear" id="pass" type="password" name="password" onclick="password1()" onblur="password2()">
+				</form>
+				</div>
+				<div id="hint3" class="hint" style="display: none;">建议使用两种字符组合</div>
+				<div id="hint4" class="hint" style="display: none;">密码不能为空</div>
+				<div id="submit">
+					<form>
+						<input type="button" value="立即注册" onfocus="register()">
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="nav2">
+			<ul>
+				<li><div class="box1">热卖</div><a href="#">GO和NOW&nbsp;官方旗舰店</a></li>
+				<li><div class="box1">特卖</div><a href="#">大同路有家宵夜店 </a></li>
+				<li><div class="box1">活动</div><a href="#">三圆制服管黑穗醋栗</a></li>
+				<li><div class="box1">促销</div><a href="#">全球尖货来袭&nbsp;不只5折</a></li>
+				<li><div class="box1">新品</div><a href="#">超市千万爆款限量抢</a></li>
+			</ul>
+		</div>	
+		<div class="box2">
+			<p><a href="#">猜你喜欢</a></p>
+			<ul>
+				<li>
+					<img src="images/4.png">
+					<span style="color: #ff5511">手机会场&nbsp;新品限时直降</span>
+					<br>
+					<span class="text">狂欢开幕去加购</span>
+				</li>
+				<li>
+					<img src="images/10.jpg">
+					<span style="color: #9999ff">邂逅潮流名品店</span>
+					<br>
+					<span class="text">618限量抢</span>
+				</li>
+				<li>
+					<img src="images/6.jpg">
+					<span style="color: #00aa88">超级生活日&nbsp;领卷满199-35</span>
+					<br>
+					<span class="text">百亿补贴&nbsp;全场低价</span>
+				</li>
+				<li>
+					<img src="images/7.jpg">
+					<span style="color: #ff5511">保暖爆款清单3折起</span>
+					<br>
+					<span class="text">狂欢开幕去加购</span>
+				</li>
+				<li>
+					<img src="images/8.jpg">
+					<span style="color: #9999ff">潮货汇集&nbsp;不潮还不快点我</span>
+					<br>
+					<span class="text">618限量抢</span>
+				</li>
+				<li>
+					<img src="images/9.jpg">
+					<span style="color: #ffaa88">母婴大牌限时五折</span>
+					<br>
+					<span class="text">百亿补贴&nbsp;全场低价</span>
+			</ul>
+		</div>
+		<div class="bottom">
+			<span><a href="#">Taobao.com版权所有&nbsp;2003-现在</a></span>
+			<span class="police"><a href="#">&nbsp;浙公网安备&nbsp;33010002000075号</a></span>
+		</div>
+		<div id="gotop">
+			<img src="images/timg.jpg" alt="gotop">
+		</div>
+	</div>
+	<script>
+		var pic = document.getElementById("pic");
+		var img = pic.firstChild;
+		var i = 1;
+		setInterval(changeImg, 2500);
+		function changeImg() {
+			i++;
+			if(i == 6) {
+				i = 1;
+			}
+			img.src = "images/" + i + ".jpg";
+		}
+		function user1() {
+			var hint1 = document.getElementById("hint1");
+			var hint2 = document.getElementById("hint2");
+			var hint3 = document.getElementById("hint3");
+			var hint4 = document.getElementById("hint4");
+			hint1.style.display = "block";
+			hint2.style.display = "none";
+			hint3.style.display = "none";
+			hint4.style.display = "none";
+		} 
+		function user2() {
+			if(document.getElementById("userid").value.length == 0) {
+				hint2.style.display = "block";
+				hint1.style.display = "none";
+				hint3.style.display = "none";
+				hint4.style.display = "none";
+			} else {
+				hint2.style.display = "none";
+				hint1.style.display = "none";
+				hint3.style.display = "none";
+				hint4.style.display = "none";
+			}
+		}
+		function password1() {
+			hint3.style.display = "block";
+			hint4.style.display = "none";
+			hint2.style.display = "none";
+			hint1.style.display = "none";
+		} 
+		function password2() {
+			if(document.getElementById("pass").value.length == 0) {
+				hint4.style.display = "block";
+				hint3.style.display = "none";
+				hint2.style.display = "none";
+				hint1.style.display = "none";
+			} else {
+				hint2.style.display = "none";
+				hint1.style.display = "none";
+				hint3.style.display = "none";
+				hint4.style.display = "none";
+			}
+			
+		}
+		function register() {
+			var username = document.getElementById("userid").value;
+			var password = document.getElementById("pass").value;
+			alert("注册成功!    " + '用户名：' + username + "    密码：" + password);
+			hint3.style.display = "none";
+			hint4.style.display = "none";
+			hint2.style.display = "none";
+			hint1.style.display = "none";	
+		}
+        window.addEventListener("scroll",handle)
+        function handle(){
+            var oTop = document.body.scrollTop||document.documentElement.scrollTop
+            if(oTop>=200){
+                gotop.style.display = "block";
+            }else{
+                gotop.style.display = "none";
+            }
+            gotop.onclick = function(){
+                window.scrollTo({
+                    top:0,
+                    behavior:"smooth"
+                })
+            }
+        }
+        </script>
+</body>
+</html>
